@@ -8,24 +8,34 @@ Initialiser un tableau de x marques de voitures. Ecrire un algorithme permettant
 
 <?php
 
-$tableau = "'Peugeot' , 'Renault' , 'BMW' , 'Mercedes'";
-$temp = explode(" , ", $tableau);
-$count = count(explode(" , ", $tableau));
+//tableau des chaines
+$tableau = ['Peugeot' , 'Renault' , 'BMW' , 'Mercedes'];
 
-echo "$tableau<br><br>";
+//nombres des elements dans la tableau
+$count = count($tableau);
+
+//imprime horizontal de les elements de le tableau
+echo implode(" ", $tableau);
+
+//espace vertical
+echo "<br><br>";
+
+//s'il y a une seule element dans le tableau
 if($count == 1)
     {
-        $temp[0] = trim($temp[0], "'");
         echo "Il y a $count seul marque de voitures dans le tableau:<br>";
-        echo "  #   $temp[0]";
-    }   
+        //imprime vertical
+        echo "  #   $tableau[0]";
+    }
+
+//sinon s'il y a plusiers des elementes dans le tableau   
 else
     {
         echo "Il y a $count marques de voitures dans le tableau:<br>";
         for($i = 0; $i < $count; $i++)
             {
-                $temp[$i] = trim($temp[$i], "'");
-                echo "  #   $temp[$i]<br>";
+                //imprime vertical
+                echo "  #   $tableau[$i]<br>";
             }
     }
 

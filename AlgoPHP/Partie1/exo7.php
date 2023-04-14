@@ -6,36 +6,46 @@ Ecrire un algorithme permettant de renvoyer la catégorie d’un enfant en fonct
 
 <?php
 
-function enfant_gere($val)
+//function qui gere la categorie de un enfants depandant l'age
+function enfant_gere($val) 
 {
-    if($val == 6 or $val == 7)
-    {
-        echo "L’enfant qui a $val ans appartient à la catégorie « Poussin »<br>";
-    }
-
-    if($val == 8 or $val == 9)
-    {
-        echo "L’enfant qui a $val ans appartient à la catégorie « Pupille »<br>";
-    }
-
-    if($val == 10 or $val == 11)
-    {
-        echo "L’enfant qui a $val ans appartient à la catégorie « Minime »<br>";
-    }
-
-    if($val >= 12)
+    //categorie pour enfant avec l'age majeur ou egal à 12 ans
+    if($val >= 12) 
     {
         echo "L’enfant qui a $val ans appartient à la catégorie « Cadet »<br>";
     }
 
-    if($val <= 5)
+    //categorie pour enfant avec l'age entre 10 et 11 ans
+    elseif($val >= 10) 
+    {
+        echo "L’enfant qui a $val ans appartient à la catégorie « Minime »<br>";
+    }
+
+    //categorie pour enfant avec l'age entre 8 et 9 ans
+    elseif($val >= 8) 
+    {
+        echo "L’enfant qui a $val ans appartient à la catégorie « Pupille »<br>";
+    }
+    
+    //categorie pour enfant avec l'age entre 6 et 7 ans
+    elseif($val >= 6) 
+    {
+        echo "L’enfant qui a $val ans appartient à la catégorie « Poussin »<br>";
+    }
+
+    //enfant avec moins que 5 ans inclus
+    else 
     {
         echo "L’enfant qui a $val ans est encore trop petit pour être gérer<br>";
     }
 
 }
 
-$age = rand (1, 15);
+//age aleatoire de l'enfant
+$age = rand (1, 15); 
 
-enfant_gere($age)
+//appel de la fonction avec sujets l'age de l'enfant
+enfant_gere($age); 
+
+
 ?>

@@ -9,8 +9,15 @@ Ecrire l’instruction permettant de remplacer le mot « aujourd’hui » par le
 
 <?php
 
+//phrase à examiner
 $phrase = "Notre formation DL commence aujourd'hui";
-echo "$phrase<br>";
+
+//imprime de la phrase
+echo "$phrase<br>"; 
+
+//remplacement de la mot "aujourd'hui" avec "demain"
 $phrase = str_replace("aujourd'hui", "demain", $phrase);
-echo "$phrase<br>";
+
+//imprime de la phrase changée
+echo "$phrase<br>"; 
 ?>

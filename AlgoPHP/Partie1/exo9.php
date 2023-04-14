@@ -8,15 +8,13 @@ Si la personne est une femme dont l’âge est compris entre 18 et 35 ans ou si 
 <h2>Résultat</h2>
 
 <?php
+
+//fonction qui verifie si qqn est imposable ou pas, dependant l'age et le sexe
 function imposable_check($val1, $val2)
     {
         echo "Age : $val1 <br>";
         echo "Sexe : $val2 <br>";
-        if ( ($val1 >= 18 or $val1 <= 35) and $val2 == "F")
-            {
-                echo "La personne est imposable.<br>";
-            }
-        elseif ( $val1 >=20  and $val2 == "M")
+        if ( ($val1 >= 18 or $val1 <= 35) and $val2 == "F" || $val1 >=20  and $val2 == "M" )
             {
                 echo "La personne est imposable.<br>";
             }
@@ -26,6 +24,7 @@ function imposable_check($val1, $val2)
             }
     }
 
+//parametres aleatoire de la personne choisie
 $age = rand(1, 65);
 $numero = rand(1,2);
 
@@ -38,5 +37,6 @@ else
         $sexe = "F";
     }
 
+//appel de la fonction avec sujets l'age de et le sexe
 imposable_check($age, $sexe);
 ?>

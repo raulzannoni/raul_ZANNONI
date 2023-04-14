@@ -7,41 +7,35 @@ A partir d’une fonction personnalisée et à partir d’un tableau de prénoms
 
 <?php
 
+//fonction qui identifie la nationalité et ordonne les noms par ordre alphabetique un tableau associative 
 function identification($val)
-{
-    $temp = explode(" , ", $val);
-    $count = count(explode(" , ", $val));
-    echo "$val<br><br>";
-    
-    sort($temp); 
+{   
+    //noms ordonné par ordre alphabetique 
+    ksort($val);
 
-    for ($i = 0; $i < $count ; $i++)
+    //chaque nom reçoit le salut correspondant à sa nationalité
+    foreach ($val as $nom => $nat)
         {
-            $code = $temp[$i];
-            $div = explode(" -> ", $code);
-            $name = $div[0];
-            $nat = $div[1];
-            
-            
             if($nat == "FRA")
                 {
-                    echo "Salut $name!<br>";
+                    echo "Salut $nom!<br>";
                 }
             elseif($nat == "ITA")
                 {
-                    echo "Ciao $name!<br>";
+                    echo "Ciao $nom!<br>";
                 }
             elseif($nat == "ENG")
                 {
-                    echo "Hello $name!<br>";
+                    echo "Hello $nom!<br>";
                 }
             elseif($nat == "ESP")
                 {
-                    echo "Hola $name!<br>";
+                    echo "Hola $nom!<br>";
                 }
+            //si la nationalité n'est pas reconnue
             else
                 {
-                    echo "Je ne sais pas d'où vous venez $name!<br>";
+                    echo "Je ne sais pas d'où vous venez $nom!<br>";
                 }
             
         }
@@ -49,9 +43,11 @@ function identification($val)
 
 }
 
-$tableau = "Mickael -> FRA , Virgile -> ESP , Thomas -> DEN , Marie-Claire -> ENG , Antonio -> ITA";
 
+//tableau associative (nom et nationalité) des chaines 
+$tableau = ["Mickael" => "FRA" , "Virgile" => "ESP" , "Thomas" => "DEN" , "Marie-Claire" => "ENG" , "Antonio" => "ITA"];
 
+//appel de la fonction
 identification($tableau);
 
 ?>

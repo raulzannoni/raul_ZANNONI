@@ -8,12 +8,21 @@ Ecrire un algorithme permettant de savoir si une phrase est palindrome.
 <h2>Résultat</h2>
 
 <?php
-function palindrome_check($val)
-    {
-        $lower_case = strtolower($val);
-        $trim = str_replace(' ', '', $lower_case);
-        $trim_rev = strrev($trim);
-        if($trim == $trim_rev)
+
+//function qui verifie si une stringe est palindrome ou pas
+function palindrome_check($val) 
+    {   
+        //transformation de tout les caracteres minuscule
+        $lower_case = strtolower($val); 
+
+        //effacement de tous les espaces dans la stringe
+        $trim = str_replace(' ', '', $lower_case); 
+
+        //creation de la stringe avec les caracteres inversés 
+        $trim_rev = strrev($trim); 
+
+        //verification si la phrase est palindrome
+        if($trim == $trim_rev) 
         {
             echo "La phrase \"$val\" est palindrome!<br>";
         }
@@ -22,11 +31,13 @@ function palindrome_check($val)
             echo "La phrase \"$val\" n'est pas palindrome!<br>";
         }
     }
-$phrase_1 = "Engage le jeu que je le gagne";
-$phrase_2 = "C'est la vie!";
 
-palindrome_check($phrase_1);
-palindrome_check($phrase_2);
+//phrases à verifier
+$phrase_1 = "Engage le jeu que je le gagne"; 
+$phrase_2 = "C'est la vie!"; 
 
+//appel de la fonction avec deux differents sujets
+palindrome_check($phrase_1); 
+palindrome_check($phrase_2); 
 
 ?>
