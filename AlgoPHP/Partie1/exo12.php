@@ -12,27 +12,22 @@ function identification($val)
     $temp = explode(" , ", $val);
     $count = count(explode(" , ", $val));
     echo "$val<br><br>";
-
+    
+    sort($temp); 
 
     for ($i = 0; $i < $count ; $i++)
         {
             $code = $temp[$i];
-   
-            //echo "$count<br>";
-            echo "$code<br>";
             $div = explode(" -> ", $code);
-            $name[$i] = $div[0];
-            $nat[$i] = $div[1];
-            $name = $name[$i];
-            $nat = $nat[$i];
+            $name = $div[0];
+            $nat = $div[1];
             
-            echo "$name, $nat<br>";
-            /*
+            
             if($nat == "FRA")
                 {
                     echo "Salut $name!<br>";
                 }
-            elseif($nat[$i] == "ITA")
+            elseif($nat == "ITA")
                 {
                     echo "Ciao $name!<br>";
                 }
@@ -46,14 +41,15 @@ function identification($val)
                 }
             else
                 {
-                    echo "Je ne sais pas d'où vous venez $name<br>";
+                    echo "Je ne sais pas d'où vous venez $name!<br>";
                 }
-            */
+            
         }
 
 
 }
-$tableau = "Mickael -> FRA , Virgile -> ESP , Marie-Claire -> ENG , Antonio -> ITA";
+
+$tableau = "Mickael -> FRA , Virgile -> ESP , Thomas -> DEN , Marie-Claire -> ENG , Antonio -> ITA";
 
 
 identification($tableau);
