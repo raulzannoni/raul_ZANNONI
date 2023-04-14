@@ -20,15 +20,15 @@ $depart = new DateTime('1900-01-01');
 
 $naissance = random_date($depart, $aujourdhui);
 
-//$diff = $today->diff($depart);
-//$interval = $today->diff($naissance);
+$diff = $aujourdhui->diff($naissance);
+
 
 $date1 = new DateTime('2019-9-10');
 $date2 = new DateTime('2018-9-15');
-$diff = $date1->diff($date2);
+
 echo "Aujourd'hui c'est le " .  $aujourdhui->format('d/m/Y') . " et la date de naissance le  " . $naissance->format('d/m/Y') . ": <br>";
 
 
-//echo sprintf('Age de la personne: %d ans %d mois %d jours.', $diff->y, $diff->m, $diff->d);
+echo "Age de la personne: " . $diff->y . " ans " . $diff->m . " mois " . $diff->d .".<br>";
 
 ?>
