@@ -16,12 +16,16 @@ function random_date(DateTime $start, DateTime $end) {
 }
 
 $aujourdhui = new DateTime(); //gg, mm, aa
-$depart = new DateTime('01-01-1900');
+$depart = new DateTime('1900-01-01');
 
 $naissance = random_date($depart, $aujourdhui);
 
-//$diff = $today->diff($naissance);
+//$diff = $today->diff($depart);
+$interval = $today->diff($naissance);
 
+$date1 = new DateTime('2019-9-10');
+$date2 = new DateTime('2018-9-15');
+//$diff = $date1->diff($date2);
 echo "Aujourd'hui c'est le " .  $aujourdhui->format('d/m/Y') . " et la date de naissance le  " . $naissance->format('d/m/Y') . ": <br>";
 
 
