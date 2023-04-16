@@ -1,8 +1,6 @@
 <h1>Exercise 1</h1>
 
-
 <p>Créer une fonction permettant de transformer une chaîne de caractère passée en argument en majuscules et en rouge. <br>
-
 
 <h2>Résultat</h2>
 
