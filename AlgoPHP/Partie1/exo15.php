@@ -13,10 +13,10 @@
 class Personne
     {
         //proprietés privées
-        private $_nom;
-        private $_prenom;
-        private $_sexe;
-        private $_date_naissance;
+        private string $_nom;
+        private string $_prenom;
+        private string $_sexe;
+        private DateTime $_dateNaissance;
 
         //getter et setter pour chaque proprieté
         public function getNom() {
@@ -44,33 +44,35 @@ class Personne
         }
 
         public function getDate() {
-            return $this->_date_naissance;
+            return $this->_dateNaissance;
         }
 
-        public function setDate($date_naissance) {
-            $this->_date_naissance = $date_naissance;
+        public function setDate($dateNaissance) {
+            $this->_dateNaissance = $dateNaissance;
         }
 
         //constructor de la classe personne
-        public function __construct($nom, $prenom, $sexe, $date_naissance)
+        public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
             {
                 //definition de la liste de le constructor
                 $this->_nom = $nom;
                 $this->_prenom = $prenom;
                 $this->_sexe = $sexe;
-                $this->_date_naissance = $date_naissance;
-
-                //date de naissance selon DateTime
-                $birth = new DateTime($date_naissance);
+                $this->_dateNaissance = new DateTime ($dateNaissance);
+            }
+        
+        //methode qui affiche prenom nom sexe et age de la personne
+        public function calcAge()
+            {
                 //aujourd'hui selon DateTime
                 $now = new DateTime('now');
 
                 //calcul de l'age de la personne construite
-                $intervall = $now->diff($birth);
+                $intervall = $now->diff($this->_dateNaissance);
                 
                 //imprime de prenom, nom et age (en ans) de la personne construite
-                echo "$prenom $nom, $sexe,   a  $intervall->y ans <br>";
-                
+                echo $this->_prenom." ".$this->_nom.", ".$this->_sexe.",   a  ".$intervall->y." ans <br>";
+
             }
 
     }
@@ -78,6 +80,10 @@ class Personne
 //les deux personnes construites
 $p1 = new Personne("DUPONT", "Michel", "homme", "1980-02-19") ;
 $p2 = new Personne("DUCHEMIN", "Alice", "femme", "1985-01-17") ;
+
+//appel de le methode calcAge() pour les deus personne construites
+$p1->calcAge();
+$p2->calcAge();
 
 
 
