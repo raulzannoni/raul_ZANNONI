@@ -25,4 +25,4 @@ check_mail("elan@elan-formation.fr");
 check_mail("contact@elan");
 
 
-?>
+?>   
