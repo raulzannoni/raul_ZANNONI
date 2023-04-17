@@ -26,29 +26,31 @@ class Voiture
         private static float $_numVoiture = 0;  
 
         //getter et setter pour chaque attribut
+
+        public function setMarque($marque) {
+            $this->_marque = $marque;
+        }
         public function getMarque() {
             return $this->_marque;
         }
 
-        public function setNom($marque) {
-            $this->_marque = $marque;
+        public function setModele($modele) {
+            $this->_marque = $modele;
         }
 
         public function getModele() {
             return $this->_modele;
         }
 
-        public function setModele($modele) {
-            $this->_modele = $modele;
+        public function setNBPortes($nBPortes) {
+            $this->_modele = $nBPortes;
         }
 
         public function getNBPortes() {
             return $this->_nBPortes;
         }
 
-        public function setSexe($nBPortes) {
-            $this->_nBPortes = $nBPortes;
-        }
+    
 
         //constructor de la classe voiture
         public function __construct($data)
@@ -109,14 +111,6 @@ class Voiture
 
             }
 
-
-
-
-
-
-
-
-
     }
 
 //chaines identifiant les voitures à construire
@@ -131,20 +125,26 @@ $v2 =   [   "Citroën",
 
 //les deux voitures construites
 $voiture_1 = new Voiture($v1);
-$voiture_2 = new Voiture($v2);
+
 
 $voiture_1->demarrer();
 $voiture_1->accelerer(50);
 
+$voiture_1->vitesse();
 
+$voiture_1->infos();
+
+//----------------------------------
+
+$voiture_2 = new Voiture($v2);
 
 $voiture_2->demarrer();
 $voiture_2->stopper(20);
 
-$voiture_1->vitesse();
 $voiture_2->vitesse();
 
-$voiture_1->infos();
 $voiture_2->infos();
+
+
 
 ?>
