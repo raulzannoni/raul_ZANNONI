@@ -60,7 +60,7 @@ function formaterDateFr($chaine)
         $result = $date->format("N j F Y");
 
         //variable qui represente le numero de jour de la semaine
-        $num_jour = explode(' ', trim($result))[0];
+        $num_jour = explode(' ', $result)[0];
         
         //variable qui represent le mois de l'an en anglais
         $mois = explode(' ', $result)[2];
