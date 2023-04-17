@@ -59,10 +59,10 @@ function formaterDateFr($chaine)
         //datetime transfomé en chaine "numero-jour-semaine jour mois an"
         $result = $date->format("N j F Y");
 
-        //variable qui represente le numero de jour de la semaine
+        //chaine qui represente le numero de jour de la semaine
         $num_jour = explode(' ', $result)[0];
         
-        //variable qui represent le mois de l'an en anglais
+        //chaine qui represent le mois de l'an en anglais
         $mois = explode(' ', $result)[2];
     
         
