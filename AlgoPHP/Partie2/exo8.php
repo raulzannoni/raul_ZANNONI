@@ -31,4 +31,4 @@ $num = rand(1,6);
 //appel de la fonction avec sujet le tableau associative défini précédemment
 repeterImage($dog_url, $num);
 
-?>
+?>    
