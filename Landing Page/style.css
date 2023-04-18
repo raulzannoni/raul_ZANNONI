@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+ 
+    *{ 
+        margin : 0;
+        padding: 0; /*  */
+        box-sizing: border-box;
+        font-family: "Poppins";
+        
+    }  
+
+/* ------------------- section 1 -------------------- */   
+
+    #home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: radial-gradient(rgb(139, 195, 245), #1294b8);
+    }
+
+    #home_header{
+        position: relative;
+        width: 100%;
+        top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #home_header h2, h4{
+        color: white;
+    }
+  
+    
+    #header_search{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center ;
+    }
+
+    #header_kucra h2 {
+        padding: 20px;
+    }
+
+
+    #header_search h4 {
+        padding: 20px;
+    }
+
+    #header_social h4 {
+        padding: 20px;
+    }
+
+    #header_social{
+        display: flex;
+        justify-content: space-between;
+        align-items: center ;    
+    }
+
+    .home_logo {
+        padding: 20px;
+    }
+
+    #home_container{
+        display: flex;
+        min-height: 100vh;
+        width: 80%;
+        /* padding: 50px 10%; */
+        justify-content: center;
+        align-items: center ;
+        gap: 20px ;
+
+
+    }
+
+    .text{
+        width: 72%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+
+    input[type=text]{
+        width: 100%;
+        padding: 2px 5px;
+        display: inside;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+    input[type=submit]{
+        width: 20%;
+        padding: 2px 5px;
+        display: inside;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+  
+
+    .svg_image{
+        width: 100%;
+
+    }
+
+    #svg{
+        height: 100%;
+        width: 100%;
+        object-fit:  cover;
+    }
+
+
+/* ------------------- section 2 -------------------- */
+
+
+    #features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #features_header {
+        position: relative;
+        top: 10px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+        width: 40%;
+        row-gap: 10px;
+
+    }
+
+
+    #features_container{
+        display: flex;
+        min-height: 100vh;
+        padding: 0 15%;
+        justify-content: center;
+        align-items: center ;
+        gap: 20px ;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: radial-gradient(rgb(139, 195, 245), #1294b8);
+        width: 300px;
+        border-radius: 10px;
+        padding: 15px 30px 15px 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        row-gap: 10px;
+    }
+
+
+
+
