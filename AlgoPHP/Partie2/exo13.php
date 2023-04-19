@@ -78,8 +78,8 @@ class Voiture
                 //controle si la voiture est demarré
                 if(self::$_active)
                     {
-                        self::$_vitesseActuelle += $vitesse;
-                        echo "Le véhicule ".$this->_marque." ".$this->_modele." accélère de ".strval(self::$_vitesseActuelle)." km/h !<br>";
+                        $this->_vitesseActuelle += $vitesse;
+                        echo "Le véhicule ".$this->_marque." ".$this->_modele." accélère de ".strval($this->_vitesseActuelle)." km/h !<br>";
                     }
                 else
                     {
@@ -94,7 +94,7 @@ class Voiture
                 //controle si la voiture est demarré
                 if(self::$_active)
                     {
-                        self::$_vitesseActuelle = 0;
+                        $this->_vitesseActuelle = 0;
                         echo "Le véhicule ".$this->_marque." ".$this->_modele." est stoppé!<br>";
                         self::$_active = FALSE;
                     }
@@ -104,13 +104,44 @@ class Voiture
                         echo "Pour stopper, il faut démarrer le véhicule ".$this->_marque." ".$this->_modele."!<br>";
                     }
                
-
             }
+
+        //methode pour rallentir la voiture
+        public function rallentir($vitesse)
+            {
+                //controle si la voiture est demarré
+                if(self::$_active)
+                    {
+                            if($this->_vitesseActuelle > 0)
+                                {
+                                    echo "Le véhicule ".$this->_marque." ".$this->_modele." veut rallentir de ".$vitesse." km/h !<br>";
+                                    if($this->_vitesseActuelle - $vitesse > 0)
+                                        {
+                                            $this->_vitesseActuelle = $this->_vitesseActuelle - $vitesse;
+
+                                        }
+
+                                    else
+                                        {
+                                            $this->_vitesseActuelle = 0;
+                                            self::$_active = FALSE;
+                                        }
+                                }
+                    }
+
+                    else
+                    {
+                        echo "Pour rallentir, il faut démarrer le véhicule ".$this->_marque." ".$this->_modele."!<br>";
+                    }
+               
+            }
+
+
         
         //methode pour afficher la vitesse de la voiture
         public function vitesse()
             {
-                echo "La vitesse du véhicule ".$this->_marque." ".$this->_modele." est de ".strval(self::$_vitesseActuelle)." km/h !<br>";
+                echo "La vitesse du véhicule ".$this->_marque." ".$this->_modele." est de ".strval($this->_vitesseActuelle)." km/h !<br>";
             }
         
         //methode sur les infos de la voiture
@@ -131,7 +162,7 @@ class Voiture
                     {
                         echo "Le véhicule ".$this->_marque." est à l'arret<br>";
                     }
-                echo "Sa vitesse actuelle est de: ".strval(self::$_vitesseActuelle)." km/h<br>";
+                echo "Sa vitesse actuelle est de: ".strval($this->_vitesseActuelle)." km/h<br>";
                 echo "****************************************<br><br>";
 
             }
@@ -147,6 +178,7 @@ $voiture_2 = new Voiture("Citroën", "C4", 3);
 
 $voiture_1->demarrer();
 $voiture_1->accelerer(50);
+$voiture_1->rallentir(24);
 
 //----------------------------------
 
