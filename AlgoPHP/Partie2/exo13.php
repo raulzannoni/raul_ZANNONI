@@ -19,8 +19,11 @@ class Voiture
         private string $_modele;
         private int $_nBPortes;
 
-        //attribut statique de la vitesse, instancié par 0
+        //attribut float statique de la vitesse, instancié par 0
         private static float $_vitesseActuelle = 0;
+
+        //attribut bool statique qui qui vérifie si la machine fonctionne (par defaut no)
+        private static bool $_active = FALSE;
 
         //attribut statique de numero de voiture, instancié par 0
         private static float $_numVoiture = 0;  
@@ -53,12 +56,12 @@ class Voiture
     
 
         //constructor de la classe voiture
-        public function __construct($data)
+        public function __construct(string $marque, string $modele, int $nBPortes)
             {
                 //definition de la liste de le constructor
-                $this->_marque = $data[0];
-                $this->_modele = $data[1];
-                $this->_nBPortes = $data[2];
+                $this->_marque = $marque;
+                $this->_modele = $modele;
+                $this->_nBPortes = $nBPortes;
                 //compteur de voiture
                 self::$_numVoiture++;
             }
@@ -66,23 +69,43 @@ class Voiture
         // methode pour demarrer la voiture
         public function demarrer()
             {
+                //demaragge de la voiture
+                self::$_active = TRUE;
                 echo "Le véhicule ".$this->_marque." ".$this->_modele." démarre!<br>";
             }
         
         //methode pour accelerer la voiture
         public function accelerer(float $vitesse)
             {
-                self::$_vitesseActuelle += $vitesse;
-                echo "Le véhicule ".$this->_marque." ".$this->_modele." accélère de ".strval(self::$_vitesseActuelle)." km/h !<br>";
+                //controle si la voiture est demarré
+                if(self::$_active)
+                    {
+                        self::$_vitesseActuelle += $vitesse;
+                        echo "Le véhicule ".$this->_marque." ".$this->_modele." accélère de ".strval(self::$_vitesseActuelle)." km/h !<br>";
+                    }
+                else
+                    {
+                        echo "Le véhicule ".$this->_marque." ".$this->_modele." veut accélerer de ".strval($vitesse)." km/h !<br>";
+                        echo "Pour accélerer, il faut démarrer le véhicule ".$this->_marque." ".$this->_modele."!<br>";
+                    }
             }
 
         //methode pour stopper la voiture
-        public function stopper(float $vitesse)
+        public function stopper()
             {
-                self::$_vitesseActuelle = 0;
-                echo "Le véhicule ".$this->_marque." ".$this->_modele." est stoppé!<br>";
-                echo "Le véhicule ".$this->_marque." ".$this->_modele." veut accélerer de ".strval($vitesse)." km/h !<br>";
-                echo "Pour accélerer, il faut démarrer le véhicule ".$this->_marque." ".$this->_modele."!<br>";
+                //controle si la voiture est demarré
+                if(self::$_active)
+                    {
+                        self::$_vitesseActuelle = 0;
+                        echo "Le véhicule ".$this->_marque." ".$this->_modele." est stoppé!<br>";
+                        self::$_active = FALSE;
+                    }
+
+                    else
+                    {
+                        echo "Pour stopper, il faut démarrer le véhicule ".$this->_marque." ".$this->_modele."!<br>";
+                    }
+               
 
             }
         
@@ -96,10 +119,10 @@ class Voiture
         public function infos()
             {
                 echo "<br>Info véhicule ".strval(self::$_numVoiture).":<br>";
-                echo "************************<br>";
+                echo "****************************************<br>";
                 echo "Nom et modèle du véhicule: ".$this->_marque." ".$this->_modele."<br>";
                 echo "Nombre de portes: ".$this->_nBPortes."<br>";
-                if(self::$_vitesseActuelle != 0)
+                if(self::$_active)
                     {
                         echo "Le véhicule ".$this->_marque." est démarré<br>";
                     }
@@ -108,41 +131,37 @@ class Voiture
                         echo "Le véhicule ".$this->_marque." est à l'arret<br>";
                     }
                 echo "Sa vitesse actuelle est de: ".strval(self::$_vitesseActuelle)." km/h<br>";
+                echo "****************************************<br><br>";
 
             }
 
     }
 
-//chaines identifiant les voitures à construire
-$v1 =   [   "Peugeot",
-            "408",
-            5
-        ];    
-$v2 =   [   "Citroën",
-            "C4",
-            3
-        ];
 
 //les deux voitures construites
-$voiture_1 = new Voiture($v1);
+$voiture_1 = new Voiture("Peugeot", "408", 5);
+$voiture_2 = new Voiture("Citroën", "C4", 3);
 
+//----------------------------------
 
 $voiture_1->demarrer();
 $voiture_1->accelerer(50);
 
-$voiture_1->vitesse();
+//----------------------------------
 
-$voiture_1->infos();
+$voiture_2->demarrer();
+$voiture_2->stopper();
+$voiture_2->accelerer(30);
 
 //----------------------------------
 
-$voiture_2 = new Voiture($v2);
 
-$voiture_2->demarrer();
-$voiture_2->stopper(20);
-
+$voiture_1->vitesse();
 $voiture_2->vitesse();
 
+//----------------------------------
+
+$voiture_1->infos();
 $voiture_2->infos();
 
 
