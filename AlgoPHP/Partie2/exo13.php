@@ -62,8 +62,6 @@ class Voiture
                 $this->_marque = $marque;
                 $this->_modele = $modele;
                 $this->_nBPortes = $nBPortes;
-                //compteur de voiture
-                self::$_numVoiture++;
             }
         
         // methode pour demarrer la voiture
@@ -118,6 +116,9 @@ class Voiture
         //methode sur les infos de la voiture
         public function infos()
             {
+                //numero de la  voiture
+                self::$_numVoiture++;
+
                 echo "<br>Info véhicule ".strval(self::$_numVoiture).":<br>";
                 echo "****************************************<br>";
                 echo "Nom et modèle du véhicule: ".$this->_marque." ".$this->_modele."<br>";
