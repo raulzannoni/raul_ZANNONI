@@ -39,13 +39,13 @@
             ?>
             </div>
             <div class="header_social">
-                <div id="home_logo">
+                <div class="home_logo">
                     <i id="fa-brands fa-facebook"></i>
                 </div>
-                <div id="home_logo">
+                <div class="home_logo">
                     <i id="fa-brands fa-twitter"></i>
                 </div>
-                <div id="home_logo">
+                <div class="home_logo">
                     <i id="fa-brands fa-instagram"></i>
                 </div>
             </div>
@@ -68,15 +68,15 @@
         </main>
     </section>
     <section id="features">
-        <header id="features_header">
-            <div>
+        <header class="features_header">
+            <div class ="feature_title">
                 <h2>Product Features</h2>
             </div>
-            <div>
+            <div class="feature_subtitle">
                 <h5>It is a long established fact that a reader will be of a page when established fact looking at its layout</h5>
             </div>
         </header>
-        <main id="features_container">
+        <main class="features_container">
             <div class="card">
                 <div class="features_logo">
                     <i class="fa-brands fa-facebook"></i>
