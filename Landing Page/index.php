@@ -56,9 +56,12 @@
                 <p>Carefully crafted after analysing the needs of different industries and the design achieves a greeat balance between purpose & presentation</p>
                 <div>
                     <form id = "form_mail" action="">
-                        <label for=""></label>
-                            <input id="input_mail" type='text' placeholder='Enter your email'>
-                            <input id="submit_mail" type='submit' value='SUBSCRIBE'>
+                        <div class="input_mail">
+                            <input  type='text' placeholder='Enter your email'>
+                            <div class="submit_mail">
+                                <input type='submit' value='SUBSCRIBE'>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -68,7 +71,7 @@
         </main>
     </section>
     <section id="features">
-        <header class="features_header">
+        <header class="feature_header">
             <div class ="feature_title">
                 <h2>Product Features</h2>
             </div>
@@ -76,7 +79,7 @@
                 <h5>It is a long established fact that a reader will be of a page when established fact looking at its layout</h5>
             </div>
         </header>
-        <main class="features_container">
+        <main class="feature_container">
             <div class="card">
                 <div class="features_logo">
                     <i class="fa-brands fa-facebook"></i>
