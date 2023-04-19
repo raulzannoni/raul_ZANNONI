@@ -14,7 +14,7 @@
             <div id="header_kucra"> 
                 <h2>Kucra</h2>
             </div>
-            <div id="header_search">
+            <div class="header_search">
             <?php  
                 $array_search = [   "HOME",
                                     "FEATURES",
@@ -31,7 +31,7 @@
                 foreach($array_search as $mot)
                     {
                         $result .=  "<div id=".$mot.">
-                                        <h4>".$mot."</h4>
+                                        <h5>".$mot."</h5>
                                     </div>";
                     }
                 
@@ -39,14 +39,14 @@
             ?>
             </div>
             <div id="header_social">
-                <div class="home_logo">
-                    <i class="fa-brands fa-facebook"></i>
+                <div id="home_logo">
+                    <i id="fa-brands fa-facebook"></i>
                 </div>
-                <div class="home_logo">
-                    <i class="fa-brands fa-twitter"></i>
+                <div id="home_logo">
+                    <i id="fa-brands fa-twitter"></i>
                 </div>
-                <div class="hom_logo">
-                    <i class="fa-brands fa-instagram"></i>
+                <div id="home_logo">
+                    <i id="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </header>
