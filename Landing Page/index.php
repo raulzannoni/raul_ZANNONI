@@ -10,8 +10,8 @@
 </head>
 <body>
     <section id="home">
-        <header id="home_header">
-            <div id="header_kucra"> 
+        <header class="home_header">
+            <div class="header_kucra"> 
                 <h2>Kucra</h2>
             </div>
             <div class="header_search">
@@ -38,7 +38,7 @@
                 echo $result;
             ?>
             </div>
-            <div id="header_social">
+            <div class="header_social">
                 <div id="home_logo">
                     <i id="fa-brands fa-facebook"></i>
                 </div>
