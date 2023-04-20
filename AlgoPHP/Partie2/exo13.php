@@ -148,9 +148,9 @@ class Voiture
         public function infos()
             {
                 //numero de la  voiture
-                self::$_numVoiture++;
+                $this->_numVoiture++;
 
-                echo "<br>Info véhicule ".strval(self::$_numVoiture).":<br>";
+                echo "<br>Info véhicule ".strval($this->_numVoiture).":<br>";
                 echo "****************************************<br>";
                 echo "Nom et modèle du véhicule: ".$this->_marque." ".$this->_modele."<br>";
                 echo "Nombre de portes: ".$this->_nBPortes."<br>";
