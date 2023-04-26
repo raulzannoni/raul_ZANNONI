@@ -39,19 +39,19 @@
             ?>
             </div>
             <div class="header_social">
-                <div class="home_logo">
+                <div id="home_logo">
                     <i id="fa-brands fa-facebook"></i>
                 </div>
-                <div class="home_logo">
+                <div id="home_logo">
                     <i id="fa-brands fa-twitter"></i>
                 </div>
-                <div class="home_logo">
+                <div id="home_logo">
                     <i id="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </header>
         <main id="home_container">
-            <div class="text">
+            <div class="text_home">
                 <h1>We are a StartUp Creative Kucra Agency</h1>
                 <p>Carefully crafted after analysing the needs of different industries and the design achieves a greeat balance between purpose & presentation</p>
                 <div>
@@ -71,7 +71,7 @@
         </main>
     </section>
     <section id="features">
-        <header class="feature_header">
+        <header id="feature_header">
             <div class ="feature_title">
                 <h2>Product Features</h2>
             </div>
@@ -79,7 +79,7 @@
                 <h5>It is a long established fact that a reader will be of a page when established fact looking at its layout</h5>
             </div>
         </header>
-        <main class="feature_container">
+        <main id="feature_container">
             <div class="card">
                 <div class="features_logo">
                     <i class="fa-brands fa-facebook"></i>
