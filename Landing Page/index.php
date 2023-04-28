@@ -10,63 +10,43 @@
 </head>
 <body>
     <section id="home">
-        <header class="home_header">
-            <div class="header_kucra"> 
+        <header id="home_header">
                 <h2>Kucra</h2>
-            </div>
-            <div class="header_search">
-            <?php  
-                $array_search = [   "HOME",
-                                    "FEATURES",
-                                    "CLIENT",
-                                    "PRICING",
-                                    "FAQ",
-                                    "ABOUT",
-                                    "BLOG",
-                                    "CONTACT"
-                                ];
-                
-                $result = "";
-
-                foreach($array_search as $mot)
-                    {
-                        $result .=  "<div id=".$mot.">
-                                        <h5>".$mot."</h5>
-                                    </div>";
-                    }
-                
-                echo $result;
-            ?>
-            </div>
-            <div class="header_social">
-                <div class="home_logo">
-                    <i id="fa-brands fa-facebook"></i>
+            <nav id="header_nav">
+                <div class="header_search">
+                    <ul>
+                        <li><a class="nav_text">HOME</a></li>
+                        <li><a class="nav_text">FEATURES</a></li>
+                        <li><a class="nav_text">CLIENT</a></li>
+                        <li><a class="nav_text">PRICING</a></li>
+                        <li><a class="nav_text">FAQ</a></li>
+                        <li><a class="nav_text">ABOUT</a></li>
+                        <li><a class="nav_text">BLOG</a></li>
+                        <li><a class="nav_text">CONTACT</a></li>
+                    <ul>
                 </div>
-                <div class="home_logo">
-                    <i id="fa-brands fa-twitter"></i>
+                <div class="header_social">
+                    <ul>
+                        <li><a class="social_home_header"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a class="social_home_header"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a class="social_home_header"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
                 </div>
-                <div class="home_logo">
-                    <i id="fa-brands fa-instagram"></i>
-                </div>
-            </div>
+            </nav>
         </header>
-        <main id="home_container">
-            <div class="text">
-                <h1>We are a StartUp Creative Kucra Agency</h1>
-                <p>Carefully crafted after analysing the needs of different industries and the design achieves a greeat balance between purpose & presentation</p>
-                <div>
+        <main>
+            <div id="home_container">   
+                <div class="text">
+                    <h1>We are a StartUp Creative Kucra Agency</h1>
+                    <p>Carefully crafted after analysing the needs of different industries and the design achieves a greeat balance between purpose & presentation</p>
                     <form id = "form_mail" action="">
-                        <div class="input_mail">
-                            <input  type='text' placeholder='Enter your email'>
-                            <div class="submit_mail">
-                                <input type='submit' value='SUBSCRIBE'>
-                            </div>
-                        </div>
+                        <input  type='text' placeholder='Enter your email'>
+                        <input type='submit' value='SUBSCRIBE'>
                     </form>
                 </div>
-            </div>
-            <div class="svg_image">
-                <img src="illustration.svg" alt="image.svg" id="svg"/> 
+                <div class="svg_image">
+                    <img src="illustration.svg" alt="image.svg" id="svg"/> 
+                </div>
             </div>
         </main>
     </section>

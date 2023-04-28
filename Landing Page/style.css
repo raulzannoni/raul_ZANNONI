@@ -12,65 +12,84 @@
         
     }  
 
-/* ------------------- section 1 -------------------- */   
-
     #home{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        position: relative;
         background: radial-gradient(rgb(139, 195, 245), #1294b8);
+        padding: 0 0 10% 0;
     }
 
-    .home_header{
+    body {
         position: relative;
-        width: 100%;
-        top: 10px;
+    }
+
+/* ------------------- section 1 -------------------- */   
+/* ------------------- HEADER -------------------- */ 
+/*
+    #home_header{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        padding: 5% 0;
+        margin: 0 5%;
     }
 
-    .home_header h2, h5{
+    #home_header h2{
+        width: fit-content;
+        font-size: 2.5em;
         color: white;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        margin-left: 7%;
+        flex-grow: 0.2;
         padding: 20px;
     }
   
+
+    #header_nav{
+        display: flex;
+    }
+
     
-    .header_search{
+
+    nav{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center ;
+        align-items: center;
+        width:100%;
+    }
+
+    nav div ul{
+        display: inline-flex;
+        list-style-type: none;
+        flex-wrap: wrap;
+    }
+
+    nav a{
+        color: white;
+        text-decoration: none;
+        padding: 1em;
+        font-size: 1.1em;
     }
 
 
+    
 
-    .header_social{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center ;    
-    }
-
-    .home_logo {
-        color: #fff;
-        padding: 20px;
-        position: relative;
-    }
-
+    /* ------------------- MAIN -------------------- */  
+    /*
     #home_container{
         display: flex;
         min-height: 100vh;
         width: 80%;
-        /* padding: 50px 10%; */
+        /* padding: 50px 10%; *//*
         justify-content: center;
         align-items: center ;
         gap: 20px ;
 
 
     }
-
+    
     .text{
         width: 72%;
         display: flex;
@@ -110,7 +129,7 @@
         width: 100%;
         object-fit:  cover;
     }
-
+*/
 
 /* ------------------- section 2 -------------------- */
 
